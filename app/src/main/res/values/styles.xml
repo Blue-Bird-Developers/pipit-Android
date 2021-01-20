@@ -1,10 +1,99 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textViewStyle">@style/customTextViewStyle</item>
+        <item name="android:buttonStyle">@style/customButtonStyle</item>
+        <item name="android:editTextStyle">@style/customEditTextStyle</item>
+        <item name="android:radioButtonStyle">@style/customRadioButtonStyle</item>
+        <item name="android:checkboxStyle">@style/customCheckboxStyle</item>
+
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
     </style>
 
+    <!-- Custom font style 일괄적용 -->
+    <style name="customTextViewStyle" parent="@android:style/Widget.DeviceDefault.TextView">
+        <item name="android:fontFamily">@font/noto_sans_family</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="customButtonStyle" parent="@android:style/Widget.DeviceDefault.Button.Borderless">
+        <item name="android:fontFamily">@font/noto_sans_family</item>
+    </style>
+    <style name="customEditTextStyle" parent="@android:style/Widget.DeviceDefault.EditText">
+        <item name="android:fontFamily">@font/noto_sans_family</item>
+    </style>
+    <style name="customRadioButtonStyle" parent="@android:style/Widget.DeviceDefault.CompoundButton.RadioButton">
+        <item name="android:fontFamily">@font/noto_sans_family</item>
+    </style>
+    <style name="customCheckboxStyle" parent="@android:style/Widget.DeviceDefault.CompoundButton.CheckBox">
+        <item name="android:fontFamily">@font/noto_sans_family</item>
+    </style>
+
+    <!-- Splash -->
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <!-- Login -->
+    <style name="loginLabelStyle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">@color/gray900</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="signupNumberLabelStyle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="loginTextButtonStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:textColor">@color/gray400</item>
+    </style>
+
+    <style name="loginTextBoxTitleStyle">
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textColor">@color/gray800</item>
+    </style>
+
+    <style name="loginTextBoxStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">@color/gray900</item>
+    </style>
+
+    <!-- Transparent Background -->
+    <style name="Theme.AppCompat.Transparent.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <!-- Bottom Sheet -->
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/welcome_background</item>
+    </style>
+
+    <!-- Welcome -->
+    <style name="welcomeTitleStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/gray900</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

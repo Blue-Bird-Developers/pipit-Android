@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.JoinActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_margin="@dimen/main_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/loginLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signup"
+        android:textAppearance="@style/loginLabelStyle"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="@dimen/main_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" (2/2)"
+        android:textAppearance="@style/signupNumberLabelStyle"
+        app:layout_constraintLeft_toRightOf="@id/loginLabel"
+        app:layout_constraintBaseline_toBaselineOf="@id/loginLabel"/>
+    <TextView
+        android:id="@+id/signupExplanation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signup_explanation2"
+        android:textSize="14sp"
+        android:textColor="@color/gray800"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="@dimen/main_margin"
+        app:layout_constraintTop_toBottomOf="@id/loginLabel"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- id box -->
+    <ImageView
+        android:id="@+id/idBox"
+        android:layout_width="330dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="@dimen/main_margin"
+        android:layout_marginEnd="@dimen/main_margin"
+        app:layout_constraintTop_toBottomOf="@id/signupExplanation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/id_title"
+        android:textAppearance="@style/loginTextBoxTitleStyle"
+        android:layout_marginStart="@dimen/main_margin"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/idBox"
+        app:layout_constraintTop_toTopOf="@id/idBox" />
+    <EditText
+        android:id="@+id/idText"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="@dimen/main_margin"
+        android:layout_marginEnd="@dimen/main_margin"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/id_hint"
+        android:textColorHint="@color/gray200"
+        android:textAppearance="@style/loginTextBoxStyle"
+        android:background="@null"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="@id/idBox"
+        app:layout_constraintStart_toStartOf="@id/idBox"
+        app:layout_constraintEnd_toEndOf="@id/idBox"/>
+
+    <!-- password box -->
+    <ImageView
+        android:id="@+id/passwordBox"
+        android:layout_width="330dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="@dimen/main_margin"
+        android:layout_marginEnd="@dimen/main_margin"
+        app:layout_constraintTop_toBottomOf="@id/idBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/join_password_title"
+        android:textAppearance="@style/loginTextBoxTitleStyle"
+        android:layout_marginStart="@dimen/main_margin"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/passwordBox"
+        app:layout_constraintTop_toTopOf="@id/passwordBox" />
+    <EditText
+        android:id="@+id/passwordText"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="@dimen/main_margin"
+        android:layout_marginEnd="@dimen/main_margin"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/password_hint"
+        android:textColorHint="@color/gray200"
+        android:textAppearance="@style/loginTextBoxStyle"
+        android:background="@null"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="@id/passwordBox"
+        app:layout_constraintStart_toStartOf="@id/passwordBox"
+        app:layout_constraintEnd_toEndOf="@id/passwordBox"/>
+
+    <!-- password box2 -->
+    <ImageView
+        android:id="@+id/reEnterPasswordBox"
+        android:layout_width="330dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="@dimen/main_margin"
+        android:layout_marginEnd="@dimen/main_margin"
+        app:layout_constraintTop_toBottomOf="@id/passwordBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/re_enter_password_title"
+        android:textAppearance="@style/loginTextBoxTitleStyle"
+        android:layout_marginStart="@dimen/main_margin"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/reEnterPasswordBox"
+        app:layout_constraintTop_toTopOf="@id/reEnterPasswordBox" />
+    <EditText
+        android:id="@+id/reEnterPasswordText"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="@dimen/main_margin"
+        android:layout_marginEnd="@dimen/main_margin"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/re_enter_password_hint"
+        android:textColorHint="@color/gray200"
+        android:textAppearance="@style/loginTextBoxStyle"
+        android:background="@null"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="@id/reEnterPasswordBox"
+        app:layout_constraintStart_toStartOf="@id/reEnterPasswordBox"
+        app:layout_constraintEnd_toEndOf="@id/reEnterPasswordBox"/>
+
+    <ImageView
+        android:id="@+id/joinBtn"
+        android:layout_width="330dp"
+        android:layout_height="56dp"
+        android:layout_margin="@dimen/main_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
