@@ -2,7 +2,7 @@
     <string name="app_name">Pipit</string>
 
     <!-- LoginMain -->
-    <string name="introduce_pipit_text">피핏을 소개합니다!</string>
+    <string name="introduce_pipit_text"><u>피핏을 소개합니다!</u></string>
     <!-- Login -->
     <string name="login">로그인</string>
     <string name="id_title">아이디</string>
@@ -10,25 +10,49 @@
     <string name="password_title">비밀번호</string>
     <string name="password_hint">비밀번호를 입력하세요</string>
     <string name="lost_id_password_text">아이디/비밀번호를 잊으셨나요?</string>
-    <string name="find_id_text">아이디 찾기</string>
-    <string name="reset_password_text">비밀번호 재설정</string>
+    <string name="find_id_text"><u>아이디 찾기</u></string>
+    <string name="reset_password_text"><u>비밀번호 재설정</u></string>
+    <string name="wrong_id_password">아이디 또는 비밀번호가 잘못 입력되었어요!</string>
     <!-- Signup -->
     <string name="signup">회원가입</string>
     <string name="signup_explanation">본인 학번으로 1개의 아이디만 인증 가능합니다.\n신입생은 수험번호와 생년월일로 인증할 수 있어요 :)</string>
-    <string name="authentication_guide">학번인증 안내</string>
+    <string name="authentication_guide"><u>학번인증 안내</u></string>
     <string name="portal_id_title">숙명포탈 ID (학번)</string>
     <string name="portal_id_hint">학번을 입력하세요</string>
     <string name="portal_password_title">숙명포탈 비밀번호</string>
-    <string name="processing_policy">이용약관 및 개인정보 처리방침</string>
-    <string name="use_portal_authentication">포탈인증이용</string>
+    <string name="processing_policy"><u>이용약관 및 개인정보 처리방침</u></string>
+    <string name="use_portal_authentication"><u>포탈인증이용</u></string>
+    <string name="agree_and_continue">동의하고 계속하기</string>
     <!-- Join -->
     <string name="signup_explanation2">이제 다 왔어요!</string>
     <string name="join_password_title">비밀번호 (8~16자, 영문 숫자 조합)</string>
     <string name="re_enter_password_title">비밀번호 재입력</string>
     <string name="re_enter_password_hint">비밀번호를 재입력하세요</string>
+    <string name="subscription_complete">가입 완료</string>
     <!-- Welcome -->
     <string name="nice_to_meet_you">만나서 반가워요!</string>
     <string name="welcome_explanation">한 눈에 보는 학교 공지!\n피핏과 함께 똑똑한 학교생활 시작해볼까요?</string>
+    <string name="ok">확인</string>
     <string name="set_push_notice">푸시 알림을 설정해주세요!</string>
     <string name="setting_explanation">푸시 알림을 설정하면 원하는 학교 공지 알림을\n빠르게 받을 수 있어요!</string>
+    <string name="set_up">설정하기</string>
+    <!-- Main(Home) -->
+    <string name="home">홈</string>
+    <string name="entire">전체</string>
+    <string name="bachelor">학사</string>
+    <string name="scholarship">장학</string>
+    <string name="graduation">졸업</string>
+    <string name="employment">취업</string>
+    <string name="qualification">스펙</string>
+    <string name="exchange">교환</string>
+    <string name="event">행사</string>
+    <string name="contest">공모전</string>
+    <string name="lecture">강연</string>
+    <string name="snack">간식배부</string>
+    <string name="bookmark">책갈피</string>
+    <string name="alert">알림</string>
+    <string name="mypage">마이페이지</string>
+    <string name="saved_bookmark">책갈피에 저장되었어요!</string>
+    <!-- Alert -->
+    <string name="alert_setting">알림 설정</string>
 </resources>

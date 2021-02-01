@@ -34,12 +34,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/welcomeTitle"/>
 
-        <ImageView
+        <TextView
             android:id="@+id/nextButton"
-            android:layout_width="330dp"
+            android:layout_width="0dp"
             android:layout_height="56dp"
+            android:text="@string/ok"
+            style="@style/blackButtonStyle"
+            android:layout_marginStart="@dimen/main_margin"
+            android:layout_marginEnd="@dimen/main_margin"
+            android:layout_marginBottom="@dimen/main_margin"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/welcomeExplanation"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

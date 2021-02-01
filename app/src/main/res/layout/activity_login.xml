@@ -15,11 +15,13 @@
         app:layout_constraintEnd_toEndOf="parent">
         <ImageView
             android:id="@+id/backBtn"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_margin="@dimen/main_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/main_margin"
+            android:src="@drawable/ic_arrow_back"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -32,16 +34,48 @@
         android:layout_marginStart="@dimen/main_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBar"/>
-
-    <!-- id box -->
-    <ImageView
-        android:id="@+id/idBox"
-        android:layout_width="330dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="60dp"
+    
+    <TextView
+        android:id="@+id/alertBox"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
         android:layout_marginStart="@dimen/main_margin"
         android:layout_marginEnd="@dimen/main_margin"
-        app:layout_constraintTop_toBottomOf="@id/loginLabel"
+        style="@style/redAlertBoxStyle"
+        android:text="@string/wrong_id_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginLabel"/>
+
+    <!-- id box -->
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/idBox"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="66dp"-->
+<!--        android:hint="@string/id_title"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_marginStart="@dimen/main_margin"-->
+<!--        android:layout_marginEnd="@dimen/main_margin"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/alertBox"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:boxStrokeColor="@color/gray300"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:singleLine="true"/>-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <ImageView
+        android:id="@+id/idBox"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="@dimen/main_margin"
+        android:layout_marginEnd="@dimen/main_margin"
+        app:layout_constraintTop_toBottomOf="@id/alertBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
     <TextView
@@ -72,7 +106,7 @@
     <!-- password box -->
     <ImageView
         android:id="@+id/passwordBox"
-        android:layout_width="330dp"
+        android:layout_width="0dp"
         android:layout_height="66dp"
         android:layout_marginTop="@dimen/main_margin"
         android:layout_marginStart="@dimen/main_margin"
@@ -105,13 +139,15 @@
         app:layout_constraintStart_toStartOf="@id/passwordBox"
         app:layout_constraintEnd_toEndOf="@id/passwordBox"/>
 
-    <ImageView
+    <TextView
         android:id="@+id/loginBtn"
-        android:layout_width="330dp"
+        android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginTop="24dp"
         android:layout_marginStart="@dimen/main_margin"
         android:layout_marginEnd="@dimen/main_margin"
+        android:text="@string/login"
+        style="@style/grayButtonStyle"
         app:layout_constraintTop_toBottomOf="@id/passwordBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

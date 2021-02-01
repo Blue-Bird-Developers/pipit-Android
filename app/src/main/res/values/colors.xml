@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#4974F5</color>
-    <color name="colorPrimaryDark">#4974F5</color>
+    <color name="colorPrimaryDark">#1C222E</color>
     <color name="colorAccent">#4974F5</color>
 
     <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
     <color name="gray900">#1C222E</color>
     <color name="gray800">#343C4D</color>
+    <color name="gray600">#606878</color>
     <color name="gray400">#B4BBC9</color>
+    <color name="gray300">#d5dbe5</color>
     <color name="gray200">#EBEDF2</color>
+    <color name="red800">#EF6770</color>
 </resources>
