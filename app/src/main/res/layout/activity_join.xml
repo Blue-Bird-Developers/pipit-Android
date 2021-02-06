@@ -54,112 +54,175 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <!-- id box -->
-    <ImageView
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/idBox"
         android:layout_width="0dp"
-        android:layout_height="66dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/id_title"
         android:layout_marginTop="48dp"
         android:layout_marginStart="@dimen/main_margin"
         android:layout_marginEnd="@dimen/main_margin"
         app:layout_constraintTop_toBottomOf="@id/signupExplanation"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/id_title"
-        android:textAppearance="@style/loginTextBoxTitleStyle"
-        android:layout_marginStart="@dimen/main_margin"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@id/idBox"
-        app:layout_constraintTop_toTopOf="@id/idBox" />
-    <EditText
-        android:id="@+id/idText"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="@dimen/main_margin"
-        android:layout_marginEnd="@dimen/main_margin"
-        android:layout_marginBottom="8dp"
-        android:hint="@string/id_hint"
-        android:textColorHint="@color/gray200"
-        android:textAppearance="@style/loginTextBoxStyle"
-        android:background="@null"
-        android:singleLine="true"
-        app:layout_constraintBottom_toBottomOf="@id/idBox"
-        app:layout_constraintStart_toStartOf="@id/idBox"
-        app:layout_constraintEnd_toEndOf="@id/idBox"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:endIconMode="clear_text"
+        style="@style/inputTextLayoutStyle"
+        android:theme="@style/inputTextLayoutStyle">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textAppearance="@style/inputEditTextStyle"/>
+    </com.google.android.material.textfield.TextInputLayout>
+<!--    <ImageView-->
+<!--        android:id="@+id/idBox"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="66dp"-->
+<!--        android:layout_marginTop="48dp"-->
+<!--        android:layout_marginStart="@dimen/main_margin"-->
+<!--        android:layout_marginEnd="@dimen/main_margin"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/signupExplanation"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/id_title"-->
+<!--        android:textAppearance="@style/loginTextBoxTitleStyle"-->
+<!--        android:layout_marginStart="@dimen/main_margin"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        app:layout_constraintStart_toStartOf="@id/idBox"-->
+<!--        app:layout_constraintTop_toTopOf="@id/idBox" />-->
+<!--    <EditText-->
+<!--        android:id="@+id/idText"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginStart="@dimen/main_margin"-->
+<!--        android:layout_marginEnd="@dimen/main_margin"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        android:hint="@string/id_hint"-->
+<!--        android:textColorHint="@color/gray200"-->
+<!--        android:textAppearance="@style/inputEditTextStyle"-->
+<!--        android:background="@null"-->
+<!--        android:singleLine="true"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/idBox"-->
+<!--        app:layout_constraintStart_toStartOf="@id/idBox"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/idBox"/>-->
 
     <!-- password box -->
-    <ImageView
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordBox"
         android:layout_width="0dp"
-        android:layout_height="66dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/password_title"
         android:layout_marginTop="24dp"
         android:layout_marginStart="@dimen/main_margin"
         android:layout_marginEnd="@dimen/main_margin"
         app:layout_constraintTop_toBottomOf="@id/idBox"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/join_password_title"
-        android:textAppearance="@style/loginTextBoxTitleStyle"
-        android:layout_marginStart="@dimen/main_margin"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@id/passwordBox"
-        app:layout_constraintTop_toTopOf="@id/passwordBox" />
-    <EditText
-        android:id="@+id/passwordText"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="@dimen/main_margin"
-        android:layout_marginEnd="@dimen/main_margin"
-        android:layout_marginBottom="8dp"
-        android:hint="@string/password_hint"
-        android:textColorHint="@color/gray200"
-        android:textAppearance="@style/loginTextBoxStyle"
-        android:background="@null"
-        android:singleLine="true"
-        app:layout_constraintBottom_toBottomOf="@id/passwordBox"
-        app:layout_constraintStart_toStartOf="@id/passwordBox"
-        app:layout_constraintEnd_toEndOf="@id/passwordBox"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:endIconMode="password_toggle"
+        app:helperText="@string/join_password_helper"
+        style="@style/inputTextLayoutStyle"
+        android:theme="@style/inputTextLayoutStyle">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:textAppearance="@style/inputEditTextStyle"/>
+    </com.google.android.material.textfield.TextInputLayout>
+<!--    <ImageView-->
+<!--        android:id="@+id/passwordBox"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="66dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:layout_marginStart="@dimen/main_margin"-->
+<!--        android:layout_marginEnd="@dimen/main_margin"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/idBox"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/join_password_title"-->
+<!--        android:textAppearance="@style/loginTextBoxTitleStyle"-->
+<!--        android:layout_marginStart="@dimen/main_margin"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        app:layout_constraintStart_toStartOf="@id/passwordBox"-->
+<!--        app:layout_constraintTop_toTopOf="@id/passwordBox" />-->
+<!--    <EditText-->
+<!--        android:id="@+id/passwordText"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginStart="@dimen/main_margin"-->
+<!--        android:layout_marginEnd="@dimen/main_margin"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        android:hint="@string/password_hint"-->
+<!--        android:textColorHint="@color/gray200"-->
+<!--        android:textAppearance="@style/inputEditTextStyle"-->
+<!--        android:background="@null"-->
+<!--        android:singleLine="true"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/passwordBox"-->
+<!--        app:layout_constraintStart_toStartOf="@id/passwordBox"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/passwordBox"/>-->
 
     <!-- password box2 -->
-    <ImageView
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/reEnterPasswordBox"
         android:layout_width="0dp"
-        android:layout_height="66dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/re_enter_password_title"
         android:layout_marginTop="24dp"
         android:layout_marginStart="@dimen/main_margin"
         android:layout_marginEnd="@dimen/main_margin"
         app:layout_constraintTop_toBottomOf="@id/passwordBox"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/re_enter_password_title"
-        android:textAppearance="@style/loginTextBoxTitleStyle"
-        android:layout_marginStart="@dimen/main_margin"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@id/reEnterPasswordBox"
-        app:layout_constraintTop_toTopOf="@id/reEnterPasswordBox" />
-    <EditText
-        android:id="@+id/reEnterPasswordText"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="@dimen/main_margin"
-        android:layout_marginEnd="@dimen/main_margin"
-        android:layout_marginBottom="8dp"
-        android:hint="@string/re_enter_password_hint"
-        android:textColorHint="@color/gray200"
-        android:textAppearance="@style/loginTextBoxStyle"
-        android:background="@null"
-        android:singleLine="true"
-        app:layout_constraintBottom_toBottomOf="@id/reEnterPasswordBox"
-        app:layout_constraintStart_toStartOf="@id/reEnterPasswordBox"
-        app:layout_constraintEnd_toEndOf="@id/reEnterPasswordBox"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:endIconMode="password_toggle"
+        style="@style/inputTextLayoutStyle"
+        android:theme="@style/inputTextLayoutStyle">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:textAppearance="@style/inputEditTextStyle"/>
+    </com.google.android.material.textfield.TextInputLayout>
+<!--    <ImageView-->
+<!--        android:id="@+id/reEnterPasswordBox"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="66dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:layout_marginStart="@dimen/main_margin"-->
+<!--        android:layout_marginEnd="@dimen/main_margin"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/passwordBox"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/re_enter_password_title"-->
+<!--        android:textAppearance="@style/loginTextBoxTitleStyle"-->
+<!--        android:layout_marginStart="@dimen/main_margin"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        app:layout_constraintStart_toStartOf="@id/reEnterPasswordBox"-->
+<!--        app:layout_constraintTop_toTopOf="@id/reEnterPasswordBox" />-->
+<!--    <EditText-->
+<!--        android:id="@+id/reEnterPasswordText"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginStart="@dimen/main_margin"-->
+<!--        android:layout_marginEnd="@dimen/main_margin"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        android:hint="@string/re_enter_password_hint"-->
+<!--        android:textColorHint="@color/gray200"-->
+<!--        android:textAppearance="@style/inputEditTextStyle"-->
+<!--        android:background="@null"-->
+<!--        android:singleLine="true"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/reEnterPasswordBox"-->
+<!--        app:layout_constraintStart_toStartOf="@id/reEnterPasswordBox"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/reEnterPasswordBox"/>-->
 
     <TextView
         android:id="@+id/joinBtn"

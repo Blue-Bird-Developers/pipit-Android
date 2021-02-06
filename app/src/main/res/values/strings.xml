@@ -6,9 +6,7 @@
     <!-- Login -->
     <string name="login">로그인</string>
     <string name="id_title">아이디</string>
-    <string name="id_hint">아이디를 입력하세요</string>
     <string name="password_title">비밀번호</string>
-    <string name="password_hint">비밀번호를 입력하세요</string>
     <string name="lost_id_password_text">아이디/비밀번호를 잊으셨나요?</string>
     <string name="find_id_text"><u>아이디 찾기</u></string>
     <string name="reset_password_text"><u>비밀번호 재설정</u></string>
@@ -17,8 +15,7 @@
     <string name="signup">회원가입</string>
     <string name="signup_explanation">본인 학번으로 1개의 아이디만 인증 가능합니다.\n신입생은 수험번호와 생년월일로 인증할 수 있어요 :)</string>
     <string name="authentication_guide"><u>학번인증 안내</u></string>
-    <string name="portal_id_title">숙명포탈 ID (학번)</string>
-    <string name="portal_id_hint">학번을 입력하세요</string>
+    <string name="portal_id_title">숙명포탈 ID(학번)</string>
     <string name="portal_password_title">숙명포탈 비밀번호</string>
     <string name="processing_policy"><u>이용약관 및 개인정보 처리방침</u></string>
     <string name="use_portal_authentication"><u>포탈인증이용</u></string>
@@ -26,8 +23,8 @@
     <!-- Join -->
     <string name="signup_explanation2">이제 다 왔어요!</string>
     <string name="join_password_title">비밀번호 (8~16자, 영문 숫자 조합)</string>
+    <string name="join_password_helper">비밀번호는 8~16자의 영문과 숫자 조합이여야 해요!</string>
     <string name="re_enter_password_title">비밀번호 재입력</string>
-    <string name="re_enter_password_hint">비밀번호를 재입력하세요</string>
     <string name="subscription_complete">가입 완료</string>
     <!-- Welcome -->
     <string name="nice_to_meet_you">만나서 반가워요!</string>

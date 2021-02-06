@@ -53,6 +53,19 @@
         app:layout_constraintTop_toBottomOf="@id/loginLabel"
         app:layout_constraintStart_toStartOf="parent"/>
     <TextView
+        android:id="@+id/alertBox"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="@dimen/main_margin"
+        android:layout_marginEnd="@dimen/main_margin"
+        style="@style/redAlertBoxStyle"
+        android:text="@string/wrong_id_password"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginLabel"/>
+    <TextView
         android:id="@+id/authenticationGuideBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,78 +77,119 @@
         app:layout_constraintTop_toBottomOf="@id/signupExplanation"/>
 
     <!-- id box -->
-    <ImageView
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/portalIdBox"
         android:layout_width="0dp"
-        android:layout_height="66dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/portal_id_title"
         android:layout_marginTop="33dp"
         android:layout_marginStart="@dimen/main_margin"
         android:layout_marginEnd="@dimen/main_margin"
         app:layout_constraintTop_toBottomOf="@id/authenticationGuideBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    <TextView
-        android:id="@+id/idBoxTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/portal_id_title"
-        android:textAppearance="@style/loginTextBoxTitleStyle"
-        android:layout_marginStart="@dimen/main_margin"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@id/portalIdBox"
-        app:layout_constraintTop_toTopOf="@id/portalIdBox" />
-    <EditText
-        android:id="@+id/portalIdText"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="@dimen/main_margin"
-        android:layout_marginEnd="@dimen/main_margin"
-        android:layout_marginBottom="8dp"
-        android:hint="@string/portal_id_hint"
-        android:textColorHint="@color/gray200"
-        android:textAppearance="@style/loginTextBoxStyle"
-        android:background="@null"
-        android:singleLine="true"
-        app:layout_constraintBottom_toBottomOf="@id/portalIdBox"
-        app:layout_constraintStart_toStartOf="@id/portalIdBox"
-        app:layout_constraintEnd_toEndOf="@id/portalIdBox"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:endIconMode="clear_text"
+        style="@style/inputTextLayoutStyle"
+        android:theme="@style/inputTextLayoutStyle">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textAppearance="@style/inputEditTextStyle"/>
+    </com.google.android.material.textfield.TextInputLayout>
+<!--    <ImageView-->
+<!--        android:id="@+id/portalIdBox"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="66dp"-->
+<!--        android:layout_marginTop="33dp"-->
+<!--        android:layout_marginStart="@dimen/main_margin"-->
+<!--        android:layout_marginEnd="@dimen/main_margin"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/authenticationGuideBtn"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+<!--    <TextView-->
+<!--        android:id="@+id/idBoxTitle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/portal_id_title"-->
+<!--        android:textAppearance="@style/loginTextBoxTitleStyle"-->
+<!--        android:layout_marginStart="@dimen/main_margin"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        app:layout_constraintStart_toStartOf="@id/portalIdBox"-->
+<!--        app:layout_constraintTop_toTopOf="@id/portalIdBox" />-->
+<!--    <EditText-->
+<!--        android:id="@+id/portalIdText"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginStart="@dimen/main_margin"-->
+<!--        android:layout_marginEnd="@dimen/main_margin"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        android:hint="@string/portal_id_hint"-->
+<!--        android:textColorHint="@color/gray200"-->
+<!--        android:textAppearance="@style/inputEditTextStyle"-->
+<!--        android:background="@null"-->
+<!--        android:singleLine="true"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/portalIdBox"-->
+<!--        app:layout_constraintStart_toStartOf="@id/portalIdBox"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/portalIdBox"/>-->
 
     <!-- password box -->
-    <ImageView
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/portalPasswordBox"
         android:layout_width="0dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="@dimen/main_margin"
+        android:layout_height="wrap_content"
+        android:hint="@string/portal_password_title"
+        android:layout_marginTop="8dp"
         android:layout_marginStart="@dimen/main_margin"
         android:layout_marginEnd="@dimen/main_margin"
         app:layout_constraintTop_toBottomOf="@id/portalIdBox"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    <TextView
-        android:id="@+id/passwordBoxTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/portal_password_title"
-        android:textAppearance="@style/loginTextBoxTitleStyle"
-        android:layout_marginStart="@dimen/main_margin"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@id/portalPasswordBox"
-        app:layout_constraintTop_toTopOf="@id/portalPasswordBox" />
-    <EditText
-        android:id="@+id/portalPasswordText"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="@dimen/main_margin"
-        android:layout_marginEnd="@dimen/main_margin"
-        android:layout_marginBottom="8dp"
-        android:hint="@string/password_hint"
-        android:textColorHint="@color/gray200"
-        android:textAppearance="@style/loginTextBoxStyle"
-        android:background="@null"
-        android:singleLine="true"
-        app:layout_constraintBottom_toBottomOf="@id/portalPasswordBox"
-        app:layout_constraintStart_toStartOf="@id/portalPasswordBox"
-        app:layout_constraintEnd_toEndOf="@id/portalPasswordBox"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:endIconMode="password_toggle"
+        style="@style/inputTextLayoutStyle"
+        android:theme="@style/inputTextLayoutStyle">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:textAppearance="@style/inputEditTextStyle"/>
+    </com.google.android.material.textfield.TextInputLayout>
+<!--    <ImageView-->
+<!--        android:id="@+id/portalPasswordBox"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="66dp"-->
+<!--        android:layout_marginTop="@dimen/main_margin"-->
+<!--        android:layout_marginStart="@dimen/main_margin"-->
+<!--        android:layout_marginEnd="@dimen/main_margin"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/portalIdBox"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+<!--    <TextView-->
+<!--        android:id="@+id/passwordBoxTitle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/portal_password_title"-->
+<!--        android:textAppearance="@style/loginTextBoxTitleStyle"-->
+<!--        android:layout_marginStart="@dimen/main_margin"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        app:layout_constraintStart_toStartOf="@id/portalPasswordBox"-->
+<!--        app:layout_constraintTop_toTopOf="@id/portalPasswordBox" />-->
+<!--    <EditText-->
+<!--        android:id="@+id/portalPasswordText"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginStart="@dimen/main_margin"-->
+<!--        android:layout_marginEnd="@dimen/main_margin"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        android:hint="@string/password_hint"-->
+<!--        android:textColorHint="@color/gray200"-->
+<!--        android:textAppearance="@style/inputEditTextStyle"-->
+<!--        android:background="@null"-->
+<!--        android:singleLine="true"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/portalPasswordBox"-->
+<!--        app:layout_constraintStart_toStartOf="@id/portalPasswordBox"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/portalPasswordBox"/>-->
 
     <TextView
         android:id="@+id/policyBtn"

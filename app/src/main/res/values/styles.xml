@@ -63,7 +63,20 @@
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/gray800</item>
     </style>
-    <style name="loginTextBoxStyle">
+
+    <!-- Input Text Field Style -->
+    <style name="inputTextLayoutStyle" parent="Widget.Design.TextInputLayout">
+        <item name="colorControlNormal">@color/gray300</item>  // unFocus 상태일 때 밑줄 색
+        <item name="boxStrokeColor">@color/colorPrimary</item> // Focus 상태일 때 밑줄 색
+        <item name="boxStrokeErrorColor">@color/red800</item>   // error 상태일 때 밑줄 색
+        <item name="boxStrokeWidthFocused">1dp</item>   // focus 상태일 때 밑줄 두께
+        <item name="android:textCursorDrawable">@color/colorPrimary</item>  // cursor 색
+        <item name="android:textColorHint">@color/gray300</item>  // hint 색
+        <item name="hintTextColor">@color/gray600</item>   // floating hint 색
+        <item name="helperTextTextColor">@color/gray600</item>
+        <item name="errorTextColor">@color/red800</item>
+    </style>
+    <style name="inputEditTextStyle">
         <item name="android:textSize">20sp</item>
         <item name="android:letterSpacing">-0.01</item>
         <item name="android:textColor">@color/gray900</item>
