@@ -17,7 +17,7 @@ class HomeViewPagerFragment : Fragment() {
 
     var dataList: MutableList<String> = mutableListOf("hi", "pipit!", "hi", "pipit!", "hi", "pipit!", "hi", "pipit!")
 
-    private lateinit var fragmentAdapter: HomeRecyclerAdapter
+    private lateinit var recyclerAdapter: HomeRecyclerAdapter
     private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
@@ -29,7 +29,7 @@ class HomeViewPagerFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        fragmentAdapter = HomeRecyclerAdapter(view.context, dataList){ compoundButton, isChecked ->
+        recyclerAdapter = HomeRecyclerAdapter(view.context, dataList){ compoundButton, isChecked ->
             if (isChecked){
                 var layout = layoutInflater.inflate(R.layout.toast_layout, null)
                 layout.setBackgroundResource(R.drawable.black_button)
@@ -42,8 +42,8 @@ class HomeViewPagerFragment : Fragment() {
                 // TODO: 2021/02/02 bookmark 안 되어 있을 때
             }
         }
-        fragmentAdapter.notifyDataSetChanged()
+        recyclerAdapter.notifyDataSetChanged()
         recyclerView = view.findViewById(R.id.homeViewPagerRecyclerView)
-        recyclerView.adapter = fragmentAdapter
+        recyclerView.adapter = recyclerAdapter
     }
 }
