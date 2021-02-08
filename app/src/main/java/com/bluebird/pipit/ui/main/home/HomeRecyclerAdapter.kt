@@ -1,38 +1,32 @@
 package com.bluebird.pipit.ui.main.home
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import android.widget.CompoundButton
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.bluebird.pipit.R
-import com.bluebird.pipit.ui.main.WebViewActivity
+import com.bluebird.pipit.databinding.ItemHomeRecyclerviewBinding
 
 class HomeRecyclerAdapter(
+    viewModel: HomeDataViewModel,
     private val context: Context,
-    private val dataList: MutableList<String>,
-    private val checkBoxClick: (CompoundButton, Boolean) -> Unit)
+    private val checkBoxClick: (View) -> Unit)
     : RecyclerView.Adapter<HomeRecyclerViewHolder>() {
+
+    private val homeViewModel = viewModel
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): HomeRecyclerViewHolder {
-        val view = LayoutInflater.from(context).inflate(
-            R.layout.item_home_recyclerview,
-            parent, false)
-        return HomeRecyclerViewHolder(view)
+        val binding: ItemHomeRecyclerviewBinding = ItemHomeRecyclerviewBinding.inflate(
+            LayoutInflater.from(parent.context), parent, false)
+        return HomeRecyclerViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = dataList.size
+    override fun getItemCount(): Int = homeViewModel.getDataList().size
 
     override fun onBindViewHolder(holder: HomeRecyclerViewHolder, position: Int) {
-        holder.bind(dataList[position], position, checkBoxClick){
-            val intent = Intent(context, WebViewActivity::class.java)
-            intent.putExtra("url", it)
-            startActivity(context, intent, null)
-        }
+        holder.bind(homeViewModel, position, checkBoxClick)
     }
 }

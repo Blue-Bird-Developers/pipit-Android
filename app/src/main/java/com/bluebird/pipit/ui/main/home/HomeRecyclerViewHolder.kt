@@ -1,21 +1,18 @@
 package com.bluebird.pipit.ui.main.home
 
 import android.view.View
-import android.widget.CheckBox
-import android.widget.CompoundButton
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bluebird.pipit.R
+import com.bluebird.pipit.databinding.ItemHomeRecyclerviewBinding
 
-class HomeRecyclerViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-    private val titleText = itemView.findViewById<TextView>(R.id.titleText)
-    private val bookmarkBox = itemView.findViewById<CheckBox>(R.id.bookMarkCheckBox)
+class HomeRecyclerViewHolder(binding: ItemHomeRecyclerviewBinding) : RecyclerView.ViewHolder(binding.root) {
+    private val binding = binding
 
-    fun bind(data: String, position: Int, checkBoxClick: (CompoundButton, Boolean) -> Unit, itemClick: (String) -> Unit){
-        titleText.text = data
-        itemView.setOnClickListener { itemClick("http://www.sookmyung.ac.kr/") }
-        bookmarkBox.setOnCheckedChangeListener { compoundButton, isChecked ->
-            checkBoxClick(compoundButton, isChecked) }
+    fun bind(viewModel: HomeDataViewModel, position: Int, checkBoxClick: (View) -> Unit){
+        binding.homeDataViewModel = viewModel
+        binding.pos = position
+        binding.executePendingBindings()
+
+        binding.bookMarkCheckBox.setOnClickListener { checkBoxClick(it) }
     }
 
 }

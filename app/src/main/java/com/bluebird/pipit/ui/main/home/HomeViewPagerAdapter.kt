@@ -7,7 +7,7 @@ class HomeViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) 
     override fun getItemCount(): Int = 11
 
     override fun createFragment(position: Int): Fragment {
-        val fragment = HomeViewPagerFragment()
+        val fragment = HomeDataFragment()
         return fragment
     }
 }
