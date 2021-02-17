@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_delete_circle_fill"
+        android:width="@dimen/text_field_icon_size"
+        android:height="@dimen/text_field_icon_size" />
+</layer-list>

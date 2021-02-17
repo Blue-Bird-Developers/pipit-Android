@@ -2,10 +2,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <dimen name="app_bar_height">48dp</dimen>
     <dimen name="main_margin">16dp</dimen>
-    <dimen name="signup_text_btn_margin">20dp</dimen>
+    <dimen name="signup_text_btn_margin">4dp</dimen>
 
     <dimen name="radius">12dp</dimen>
 
-    <dimen name="design_bottom_navigation_text_size" tools:override="true">12sp</dimen>
-    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">12sp</dimen>
+    <dimen name="text_field_icon_size">20dp</dimen>
 </resources>

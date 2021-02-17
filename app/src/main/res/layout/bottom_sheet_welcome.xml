@@ -2,14 +2,15 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/welcomeBottomSheet"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_behavior="@string/bottom_sheet_behavior"
-        app:behavior_peekHeight="482dp"
+        app:behavior_peekHeight="500dp"
         app:behavior_hideable="false">
 
         <TextView
@@ -34,19 +35,30 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/welcomeTitle"/>
 
+        <ImageView
+            android:id="@+id/welcomeImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pipi_hi"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcomeExplanation"/>
+
         <TextView
-            android:id="@+id/nextButton"
+            android:id="@+id/nextBtn"
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:text="@string/ok"
             style="@style/blackButtonStyle"
+            android:layout_marginTop="24dp"
             android:layout_marginStart="@dimen/main_margin"
             android:layout_marginEnd="@dimen/main_margin"
             android:layout_marginBottom="@dimen/main_margin"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcomeExplanation"/>
+            app:layout_constraintTop_toBottomOf="@id/welcomeImg"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

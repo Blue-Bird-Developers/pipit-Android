@@ -48,9 +48,11 @@
                 android:layout_height="wrap_content"
                 android:minWidth="0dp"
                 android:minHeight="0dp"
+                android:theme="@style/MyCheckBox"
+                android:button="@drawable/icon_bookmark_toggle"
                 android:checked="@{HomeDataViewModel.getBookmark(pos)}"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
                 android:id="@+id/titleText"

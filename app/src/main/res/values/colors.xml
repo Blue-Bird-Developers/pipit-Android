@@ -13,4 +13,6 @@
     <color name="gray300">#d5dbe5</color>
     <color name="gray200">#EBEDF2</color>
     <color name="red800">#EF6770</color>
+    <color name="yellow800">#FFD859</color>
+    <color name="transparentGray800">#F2343C4D</color>
 </resources>
