@@ -1,4 +1,4 @@
-package com.bluebird.pipit.ui.main.home
+package com.bluebird.pipit.ui.home
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bluebird.pipit.databinding.ItemHomeRecyclerviewBinding
+import com.bluebird.pipit.dataclass.HomeDataListItem
 
 class HomeRecyclerAdapter(
     viewModel: HomeDataViewModel,
-    private val context: Context,
     private val checkBoxClick: (View) -> Unit)
     : RecyclerView.Adapter<HomeRecyclerViewHolder>() {
 
@@ -27,6 +27,7 @@ class HomeRecyclerAdapter(
     override fun getItemCount(): Int = homeViewModel.getDataList().size
 
     override fun onBindViewHolder(holder: HomeRecyclerViewHolder, position: Int) {
-        holder.bind(homeViewModel, position, checkBoxClick)
+        val item = homeViewModel.getDataItem(position)
+        holder.bind(homeViewModel, item, checkBoxClick)
     }
 }

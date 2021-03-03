@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bluebird.pipit.R
-import com.bluebird.pipit.ui.main.MainActivity
+import com.bluebird.pipit.ui.MainActivity
 import kotlinx.android.synthetic.main.activity_join.*
 import kotlinx.android.synthetic.main.activity_join.backBtn
 

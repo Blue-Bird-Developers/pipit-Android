@@ -1,4 +1,4 @@
-package com.bluebird.pipit.ui.main.home
+package com.bluebird.pipit.ui.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -15,9 +15,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.bluebird.pipit.R
 import com.bluebird.pipit.databinding.FragmentHomeDataBinding
-import com.bluebird.pipit.ui.main.WebViewActivity
+import com.bluebird.pipit.ui.WebViewActivity
 
 class HomeDataFragment : Fragment() {
+    private lateinit var binding: FragmentHomeDataBinding
     private lateinit var recyclerAdapter: HomeRecyclerAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewModel: HomeDataViewModel
@@ -27,21 +28,23 @@ class HomeDataFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding: FragmentHomeDataBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home_data, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home_data, container, false)
         viewModel = ViewModelProvider(this).get(HomeDataViewModel::class.java)
         viewModel.setData()
-        viewModel.url.observe(viewLifecycleOwner, Observer {
+        viewModel.openActionLiveData.observe(viewLifecycleOwner, Observer {
             val intent = Intent(context, WebViewActivity::class.java)
-            intent.putExtra("url", it)
+            intent.putExtra("url", it.url)
+            intent.putExtra("title", it.title)
             startActivity(intent)
         })
+        viewModel.checkBoxLiveData.observe(viewLifecycleOwner, Observer(checkBoxClickListener))
         binding.homeDataViewModel = viewModel
         binding.lifecycleOwner = this
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        recyclerAdapter = HomeRecyclerAdapter(viewModel, view.context, checkBoxClickListener)
+        recyclerAdapter = HomeRecyclerAdapter(viewModel, checkBoxClickListener)
         recyclerAdapter.notifyDataSetChanged()
         recyclerView = view.findViewById(R.id.homeViewPagerRecyclerView)
         recyclerView.adapter = recyclerAdapter
@@ -57,8 +60,6 @@ class HomeDataFragment : Fragment() {
                 var t2 = Toast(context)
                 t2.view = layout
                 t2.show()
-            } else {
-                // TODO: 2021/02/02 bookmark 안 되어 있을 때
             }
         }
     }

@@ -1,4 +1,4 @@
-package com.bluebird.pipit.ui.main.alert
+package com.bluebird.pipit.ui.alert
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter

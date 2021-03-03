@@ -1,4 +1,4 @@
-package com.bluebird.pipit.ui.main.welcome
+package com.bluebird.pipit.ui.welcome
 
 import android.app.Dialog
 import android.content.Context
@@ -9,16 +9,17 @@ import com.bluebird.pipit.R
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import java.lang.RuntimeException
 
-class WelcomeSettingFragment : BottomSheetDialogFragment() {
+
+class WelcomeFragment : BottomSheetDialogFragment() {
     private var mListener: OnButtonClickListener? = null
 
 //    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
 //                              savedInstanceState: Bundle?): View? {
-//        val v = inflater.inflate(R.layout.bottom_sheet_setting_notice, container, false)
-//        val button = v.findViewById<TextView>(R.id.settingBtn)
+//        val v = inflater.inflate(R.layout.bottom_sheet_welcome, container, false)
+//        val button = v.findViewById<TextView>(R.id.nextBtn)
 //        button.setOnClickListener {
+//            mListener?.onWelcomeFragmentButton()
 //            dismiss()
 //        }
 //        return v
@@ -26,8 +27,8 @@ class WelcomeSettingFragment : BottomSheetDialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
-        dialog.setContentView(R.layout.bottom_sheet_setting_notice)
-        dialog.setOnShowListener{
+        dialog.setContentView(R.layout.bottom_sheet_welcome)
+        dialog.setOnShowListener {
             val bottomSheet = (it as BottomSheetDialog).findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
             val behavior = BottomSheetBehavior.from(bottomSheet!!)
             behavior.state = BottomSheetBehavior.STATE_EXPANDED
@@ -40,16 +41,18 @@ class WelcomeSettingFragment : BottomSheetDialogFragment() {
                         behavior.state = BottomSheetBehavior.STATE_EXPANDED
                 }
             })
+
         }
-        val button = dialog.findViewById<TextView>(R.id.settingBtn)
+        val button = dialog.findViewById<TextView>(R.id.nextBtn)
         button!!.setOnClickListener {
+            mListener?.onWelcomeFragmentButton()
             dismiss()
         }
         return dialog
     }
 
     interface OnButtonClickListener{
-        fun onWelcomeSettingFragmentButton()
+        fun onWelcomeFragmentButton()
     }
 
     override fun onAttach(context: Context) {

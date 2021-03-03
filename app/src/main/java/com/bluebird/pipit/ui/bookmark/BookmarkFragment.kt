@@ -1,4 +1,4 @@
-package com.bluebird.pipit.ui.main.bookmark
+package com.bluebird.pipit.ui.bookmark
 
 import android.os.Bundle
 import android.view.LayoutInflater

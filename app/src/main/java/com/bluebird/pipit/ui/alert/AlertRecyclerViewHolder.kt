@@ -1,4 +1,4 @@
-package com.bluebird.pipit.ui.main.alert
+package com.bluebird.pipit.ui.alert
 
 import android.view.View
 import android.widget.TextView

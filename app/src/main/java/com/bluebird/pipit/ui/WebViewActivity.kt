@@ -1,13 +1,11 @@
-package com.bluebird.pipit.ui.main
+package com.bluebird.pipit.ui
 
-import android.app.Activity
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import android.webkit.*
+import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import com.bluebird.pipit.R
 import kotlinx.android.synthetic.main.activity_webview.*
 
@@ -20,9 +18,36 @@ class WebViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_webview)
 
+        init()
+    }
+
+    private fun init(){
         webView = findViewById(R.id.webView)
         webViewSetting()
         openWebView()
+        setListeners()
+    }
+
+    private fun setListeners(){
+        webViewCheckBox.setOnCheckedChangeListener { button, checked ->
+            if (checked){
+                button.text = "저장됨"
+                makeToast()
+            }else{
+                // TODO: 2021/03/03 저장취소할 때
+                button.text = "저장하기"
+            }
+        }
+    }
+
+    private fun makeToast(){
+        var layout = layoutInflater.inflate(R.layout.toast_layout, null)
+        layout.setBackgroundResource(R.drawable.toast_background)
+        var textView: TextView = layout.findViewById(R.id.toastText)
+        textView.text = "책갈피에 저장되었어요!"
+        var t2 = Toast(this)
+        t2.view = layout
+        t2.show()
     }
 
     private fun webViewSetting(){
@@ -52,6 +77,8 @@ class WebViewActivity : AppCompatActivity() {
     private fun getExtra(){
         if(intent.hasExtra("url")){
             url = intent.getStringExtra("url")
+            val title = intent.getStringExtra("title")
+            titleText.text = title
         }
     }
 

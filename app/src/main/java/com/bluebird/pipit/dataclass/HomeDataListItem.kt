@@ -1,6 +1,7 @@
 package com.bluebird.pipit.dataclass
 
 data class HomeDataListItem (
+    var id: Int,
     var url: String,
     var category: String,
     var title: String,

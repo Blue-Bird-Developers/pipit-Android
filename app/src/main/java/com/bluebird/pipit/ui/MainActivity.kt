@@ -1,14 +1,14 @@
-package com.bluebird.pipit.ui.main
+package com.bluebird.pipit.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.bluebird.pipit.R
-import com.bluebird.pipit.ui.main.bookmark.BookmarkFragment
-import com.bluebird.pipit.ui.main.home.HomeFragment
-import com.bluebird.pipit.ui.main.alert.AlertFragment
-import com.bluebird.pipit.ui.main.welcome.WelcomeFragment
-import com.bluebird.pipit.ui.main.welcome.WelcomeSettingFragment
+import com.bluebird.pipit.ui.bookmark.BookmarkFragment
+import com.bluebird.pipit.ui.home.HomeFragment
+import com.bluebird.pipit.ui.alert.AlertFragment
+import com.bluebird.pipit.ui.welcome.WelcomeFragment
+import com.bluebird.pipit.ui.welcome.WelcomeSettingFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), WelcomeFragment.OnButtonClickListener,

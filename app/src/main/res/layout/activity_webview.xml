@@ -4,38 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.WebViewActivity">
+    tools:context=".ui.WebViewActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/webViewAppBar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_bar_height"
+        android:layout_marginStart="@dimen/main_margin"
+        android:layout_marginEnd="@dimen/main_margin"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-        <ImageView
-            android:id="@+id/backBtn"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/main_margin"
-            android:src="@drawable/ic_arrow_back"
+            android:layout_marginEnd="@dimen/main_margin"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/gray900"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintEnd_toStartOf="@id/shareBtn"/>
         <ImageView
-            android:id="@+id/frontBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/main_margin"
-            android:src="@drawable/ic_arrow_back"
-            app:layout_constraintStart_toEndOf="@id/backBtn"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-        <ImageView
-            android:id="@+id/refreshBtn"
+            android:id="@+id/shareBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/main_margin"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintEnd_toStartOf="@id/closeBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <ImageView
+            android:id="@+id/closeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:src="@drawable/ic_arrow_back"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -54,30 +60,53 @@
         android:id="@+id/webViewUnderBar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_bar_height"
+        android:layout_marginStart="@dimen/main_margin"
+        android:layout_marginEnd="@dimen/main_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
-            android:id="@+id/webViewBookMarkBtn"
+            android:id="@+id/webViewBackBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_arrow_back"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/webViewShareBtn"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/webViewShareBtn"
+            android:id="@+id/webViewFrontBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_arrow_back"
+            android:layout_marginStart="@dimen/main_margin"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/webViewBookMarkBtn"
+            app:layout_constraintStart_toEndOf="@id/webViewBackBtn"
             app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="124dp"
+            android:layout_height="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:rippleColor="@color/transparent">
+            <CheckBox
+                android:id="@+id/webViewCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="저장하기"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:button="@drawable/icon_bookmark_toggle"
+                app:buttonTint="@color/webview_checkbox_color"/>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

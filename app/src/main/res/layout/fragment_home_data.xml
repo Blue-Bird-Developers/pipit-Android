@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="HomeDataViewModel"
-            type="com.bluebird.pipit.ui.main.home.HomeDataViewModel" />
+            name="homeDataViewModel"
+            type="com.bluebird.pipit.ui.home.HomeDataViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

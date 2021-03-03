@@ -1,4 +1,4 @@
-package com.bluebird.pipit.ui.main.home
+package com.bluebird.pipit.ui.home
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter

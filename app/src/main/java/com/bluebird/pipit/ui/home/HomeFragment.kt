@@ -1,4 +1,4 @@
-package com.bluebird.pipit.ui.main.home
+package com.bluebird.pipit.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

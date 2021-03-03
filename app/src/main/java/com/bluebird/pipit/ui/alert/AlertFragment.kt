@@ -1,4 +1,4 @@
-package com.bluebird.pipit.ui.main.alert
+package com.bluebird.pipit.ui.alert
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.bluebird.pipit.R
+import com.bluebird.pipit.ui.alertsetting.AlertSettingActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
