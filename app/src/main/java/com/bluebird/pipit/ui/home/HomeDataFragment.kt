@@ -53,14 +53,18 @@ class HomeDataFragment : Fragment() {
     private val checkBoxClickListener = { view: View ->
         if (view is CheckBox) {
             if (view.isChecked) {
-                var layout = layoutInflater.inflate(R.layout.toast_layout, null)
-                layout.setBackgroundResource(R.drawable.toast_background)
-                var textView: TextView = layout.findViewById(R.id.toastText)
-                textView.text = "책갈피에 저장되었어요!"
-                var t2 = Toast(context)
-                t2.view = layout
-                t2.show()
+                makeToast()
             }
         }
+    }
+
+    private fun makeToast(){
+        var layout = layoutInflater.inflate(R.layout.toast_layout, null)
+        layout.setBackgroundResource(R.drawable.toast_background)
+        var textView: TextView = layout.findViewById(R.id.toastText)
+        textView.text = "책갈피에 저장되었어요!"
+        var t2 = Toast(context)
+        t2.view = layout
+        t2.show()
     }
 }

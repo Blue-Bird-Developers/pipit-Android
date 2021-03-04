@@ -75,14 +75,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/loginLabel">
-
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="9dp"
-                android:src="@drawable/ic_error_circle"
-                app:tint="@color/white" />
-
+                android:src="@drawable/ic_error_circle" />
             <TextView
                 style="@style/alertBoxTextStyle"
                 android:layout_width="wrap_content"
@@ -112,11 +109,9 @@
             android:theme="@style/inputTextLayoutStyle"
             app:endIconDrawable="@drawable/ic_delete_circle_fill"
             app:endIconMode="clear_text"
-            app:endIconTint="@color/gray300"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/authenticationGuideBtn">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -138,7 +133,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/portalIdBox">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

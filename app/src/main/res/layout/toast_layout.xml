@@ -10,8 +10,7 @@
         android:id="@+id/toastImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_bookmark_fill"
-        app:tint="@color/yellow800"
+        android:src="@drawable/ic_bookmark_fill_16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>

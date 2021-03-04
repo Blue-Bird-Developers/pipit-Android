@@ -1,11 +1,14 @@
 package com.bluebird.pipit.ui
 
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import android.webkit.*
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import com.bluebird.pipit.R
 import kotlinx.android.synthetic.main.activity_webview.*
 
@@ -13,6 +16,9 @@ class WebViewActivity : AppCompatActivity() {
 
     private var url: String? = null
     private lateinit var webView: WebView
+
+    var checkCanGoBack: MutableLiveData<Boolean> = MutableLiveData()
+    var checkCanGoForward: MutableLiveData<Boolean> = MutableLiveData()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,35 +28,33 @@ class WebViewActivity : AppCompatActivity() {
     }
 
     private fun init(){
-        webView = findViewById(R.id.webView)
         webViewSetting()
         openWebView()
         setListeners()
+        setObserve()
     }
 
-    private fun setListeners(){
-        webViewCheckBox.setOnCheckedChangeListener { button, checked ->
-            if (checked){
-                button.text = "저장됨"
-                makeToast()
+    private fun setObserve(){
+        checkCanGoBack.value = false
+        checkCanGoForward.value = false
+        checkCanGoBack.observe(this, Observer {
+            if (it){
+                webViewBackBtn.setImageResource(R.drawable.ic_arrow_back)
             }else{
-                // TODO: 2021/03/03 저장취소할 때
-                button.text = "저장하기"
+                webViewBackBtn.setImageResource(R.drawable.ic_arrow_back_gray)
             }
-        }
-    }
-
-    private fun makeToast(){
-        var layout = layoutInflater.inflate(R.layout.toast_layout, null)
-        layout.setBackgroundResource(R.drawable.toast_background)
-        var textView: TextView = layout.findViewById(R.id.toastText)
-        textView.text = "책갈피에 저장되었어요!"
-        var t2 = Toast(this)
-        t2.view = layout
-        t2.show()
+        })
+        checkCanGoForward.observe(this, Observer {
+            if (it){
+                webViewRightBtn.setImageResource(R.drawable.ic_arrow_right)
+            }else{
+                webViewRightBtn.setImageResource(R.drawable.ic_arrow_right_gray)
+            }
+        })
     }
 
     private fun webViewSetting(){
+        webView = findViewById(R.id.webView)
         webView.apply {
             webViewClient = MyWebViewClient()
 
@@ -83,12 +87,52 @@ class WebViewActivity : AppCompatActivity() {
     }
 
     // 웹뷰 띄울 때 새창이 아닌 기존창에서 띄우도록 한다.
-    class MyWebViewClient : WebViewClient() {
+    inner class MyWebViewClient : WebViewClient() {
         // 페이지 이동
         override fun shouldOverrideUrlLoading(webView: WebView, url: String): Boolean {
             webView.loadUrl(url)
             return true
         }
+        // 새로운 페이지 로드 시 뒤로가기/앞으로가기 버튼 활성화 여부 체크
+        override fun onPageStarted(webView: WebView?, url: String?, favicon: Bitmap?) {
+            if (webView != null){
+                checkCanGoBack.value = webView.canGoBack()
+                checkCanGoForward.value = webView.canGoForward()
+            }
+        }
+    }
+
+    private fun setListeners(){
+        webViewCheckBox.setOnCheckedChangeListener { button, checked ->
+            if (checked){
+                button.text = "저장됨"
+                makeToast()
+            }else{
+                // TODO: 2021/03/03 저장취소할 때
+                button.text = "저장하기"
+            }
+        }
+        closeBtn.setOnClickListener { finish() }
+        webViewBackBtn.setOnClickListener {
+            if (webView.canGoBack()){
+                webView.goBack()
+            }
+        }
+        webViewRightBtn.setOnClickListener {
+            if (webView.canGoForward()){
+                webView.goForward()
+            }
+        }
+    }
+
+    private fun makeToast(){
+        var layout = layoutInflater.inflate(R.layout.toast_layout, null)
+        layout.setBackgroundResource(R.drawable.toast_background)
+        var textView: TextView = layout.findViewById(R.id.toastText)
+        textView.text = "책갈피에 저장되었어요!"
+        var t2 = Toast(this)
+        t2.view = layout
+        t2.show()
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
@@ -101,9 +145,9 @@ class WebViewActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         if(webView.canGoBack()){
-            webView.goBack() // 이전 페이지로 갈 수 있다면 이동하고
+            webView.goBack()
         } else {
-            super.onBackPressed() // 더 이상 이전 페이지가 없을 때 앱이 종료된다.
+            super.onBackPressed()
         }
     }
 }

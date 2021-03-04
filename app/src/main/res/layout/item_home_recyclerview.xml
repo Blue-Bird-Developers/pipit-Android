@@ -51,7 +51,7 @@
                 android:theme="@style/MyCheckBox"
                 android:button="@drawable/icon_bookmark_toggle"
                 android:checked="@{item.bookmark}"
-                android:onClick="@{(rootView) -> homeDataViewModel.checkBoxListener(rootView, item)}"
+                android:onClick="@{(view) -> homeDataViewModel.checkBoxListener(view, item)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
