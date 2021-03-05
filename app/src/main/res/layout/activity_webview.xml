@@ -106,7 +106,7 @@
                 android:textSize="14sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                android:button="@drawable/icon_bookmark_toggle"
+                android:button="@drawable/icon_bookmark_checkbox_16"
                 app:buttonTint="@color/webview_checkbox_color"/>
         </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>

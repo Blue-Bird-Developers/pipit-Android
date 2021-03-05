@@ -2,10 +2,12 @@ package com.bluebird.pipit.ui.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -53,18 +55,28 @@ class HomeDataFragment : Fragment() {
     private val checkBoxClickListener = { view: View ->
         if (view is CheckBox) {
             if (view.isChecked) {
-                makeToast()
+                makeToast(getString(R.string.saved_bookmark_explanation), view.isChecked)
+            }else{
+                makeToast(getString(R.string.unsaved_bookmark_explanation), view.isChecked)
             }
         }
     }
 
-    private fun makeToast(){
+    private fun makeToast(toastMessage: String, checked: Boolean){
         var layout = layoutInflater.inflate(R.layout.toast_layout, null)
-        layout.setBackgroundResource(R.drawable.toast_background)
         var textView: TextView = layout.findViewById(R.id.toastText)
-        textView.text = "책갈피에 저장되었어요!"
-        var t2 = Toast(context)
-        t2.view = layout
-        t2.show()
+        textView.text = toastMessage
+        var imageView: ImageView = layout.findViewById(R.id.toastImage)
+        if (checked){
+            imageView.setImageResource(R.drawable.ic_bookmark_fill_16)
+        }else{
+            imageView.setImageResource(R.drawable.ic_bookmark_16)
+        }
+        with(Toast(context)){
+            setGravity(Gravity.BOTTOM, 0, 180)
+            duration = Toast.LENGTH_SHORT
+            view = layout
+            show()
+        }
     }
 }

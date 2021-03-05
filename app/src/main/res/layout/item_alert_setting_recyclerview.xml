@@ -31,17 +31,16 @@
             android:orientation="horizontal">
             <ImageView
                 android:id="@+id/checkImg"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@drawable/ic_check_circle"
-                app:tint="@color/gray300"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check_circle_16"/>
             <TextView
                 android:id="@+id/titleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="@{item.title}"
-                android:textAppearance="@style/alertSettingButtonTextStyle" />
+                android:textAppearance="@style/uncheckedAlertSettingButtonTextStyle" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>

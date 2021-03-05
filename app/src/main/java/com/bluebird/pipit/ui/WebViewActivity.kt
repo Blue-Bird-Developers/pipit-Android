@@ -3,8 +3,10 @@ package com.bluebird.pipit.ui
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.KeyEvent
 import android.webkit.*
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
@@ -105,11 +107,11 @@ class WebViewActivity : AppCompatActivity() {
     private fun setListeners(){
         webViewCheckBox.setOnCheckedChangeListener { button, checked ->
             if (checked){
-                button.text = "저장됨"
-                makeToast()
+                button.text = getString(R.string.saved)
+                makeToast(getString(R.string.saved_bookmark_explanation), checked)
             }else{
-                // TODO: 2021/03/03 저장취소할 때
-                button.text = "저장하기"
+                button.text = getString(R.string.save)
+                makeToast(getString(R.string.unsaved_bookmark_explanation), checked)
             }
         }
         closeBtn.setOnClickListener { finish() }
@@ -125,14 +127,22 @@ class WebViewActivity : AppCompatActivity() {
         }
     }
 
-    private fun makeToast(){
+    private fun makeToast(toastMessage: String, checked: Boolean){
         var layout = layoutInflater.inflate(R.layout.toast_layout, null)
-        layout.setBackgroundResource(R.drawable.toast_background)
         var textView: TextView = layout.findViewById(R.id.toastText)
-        textView.text = "책갈피에 저장되었어요!"
-        var t2 = Toast(this)
-        t2.view = layout
-        t2.show()
+        textView.text = toastMessage
+        var imageView: ImageView = layout.findViewById(R.id.toastImage)
+        if (checked){
+            imageView.setImageResource(R.drawable.ic_bookmark_fill_16)
+        }else{
+            imageView.setImageResource(R.drawable.ic_bookmark_16)
+        }
+        with(Toast(this)){
+            setGravity(Gravity.BOTTOM, 0, 180)
+            duration = Toast.LENGTH_SHORT
+            view = layout
+            show()
+        }
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
