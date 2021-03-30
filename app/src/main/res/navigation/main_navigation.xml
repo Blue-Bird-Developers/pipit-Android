@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:label="@string/home"
+        android:name="com.bluebird.pipit.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home"/>
+    <fragment
+        android:id="@+id/nav_bookmark"
+        android:label="@string/bookmark"
+        android:name="com.bluebird.pipit.ui.bookmark.BookmarkFragment"
+        tools:layout="@layout/fragment_bookmark"/>
+    <fragment
+        android:id="@+id/nav_alert"
+        android:label="@string/alert"
+        android:name="com.bluebird.pipit.ui.alert.AlertFragment"
+        tools:layout="@layout/fragment_alert"/>
+
+</navigation>

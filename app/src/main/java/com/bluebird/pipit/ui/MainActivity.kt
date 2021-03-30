@@ -2,58 +2,32 @@ package com.bluebird.pipit.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.bluebird.pipit.R
-import com.bluebird.pipit.ui.bookmark.BookmarkFragment
-import com.bluebird.pipit.ui.home.HomeFragment
-import com.bluebird.pipit.ui.alert.AlertFragment
 import com.bluebird.pipit.ui.welcome.WelcomeFragment
 import com.bluebird.pipit.ui.welcome.WelcomeSettingFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), WelcomeFragment.OnButtonClickListener,
     WelcomeSettingFragment.OnButtonClickListener{
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction().add(R.id.mainFrame, HomeFragment()).commit()
         init()
     }
 
     private fun init(){
-        setListeners()
+        setBottomNavigation()
         openWelcome()
     }
 
-    private fun setListeners(){
-        setBottomNavListener()
-    }
-
-    private fun setBottomNavListener(){
-        bottomNavigationBar.setOnNavigationItemSelectedListener{ item ->
-            when(item.itemId){
-                R.id.nav_home -> {
-                    replaceFragment(HomeFragment())
-                    return@setOnNavigationItemSelectedListener true
-                }
-                R.id.nav_bookmark -> {
-                    replaceFragment(BookmarkFragment())
-                    return@setOnNavigationItemSelectedListener true
-                }
-                R.id.nav_mypage -> {
-                    replaceFragment(AlertFragment())
-                    return@setOnNavigationItemSelectedListener true
-                }
-                else -> {
-                    return@setOnNavigationItemSelectedListener false
-                }
-            }
-        }
-    }
-
-    private fun replaceFragment(fragment: Fragment){
-        supportFragmentManager.beginTransaction().replace(R.id.mainFrame, fragment).commit()
+    private fun setBottomNavigation(){
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        bottomNavigationBar.setupWithNavController(navController)
     }
 
     private fun openWelcome(){
