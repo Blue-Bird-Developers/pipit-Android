@@ -190,6 +190,10 @@
     </style>
 
     <!-- Text Style -->
+    <style name="H1">
+        <item name="android:textSize">28dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
     <style name="subtitle3">
         <item name="android:textSize">14dp</item>
         <item name="android:textStyle">bold</item>
