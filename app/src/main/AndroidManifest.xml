@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.login.PortalCertifyActivity"></activity>
+        <activity android:name=".ui.login.FindIdResultActivity"></activity>
+        <activity android:name=".ui.login.PortalCertifyActivity" />
         <activity android:name=".ui.alertsetting.AlertSettingActivity" />
         <activity android:name=".ui.WebViewActivity" />
         <activity

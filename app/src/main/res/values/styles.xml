@@ -188,4 +188,10 @@
         <item name="android:letterSpacing">-0.03</item>
         <item name="android:textStyle">normal</item>
     </style>
+
+    <!-- Text Style -->
+    <style name="subtitle3">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

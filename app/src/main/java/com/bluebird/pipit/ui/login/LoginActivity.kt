@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
             directMainActivity()
         }
         findIdBtn.setOnClickListener {
-            // TODO: 2021/01/20 아이디 찾기 버튼 구현
+            directPortalCertifyActivity()
         }
         resetPasswordBtn.setOnClickListener {
             // TODO: 2021/01/20 비밀번호 재설정 버튼 구현
@@ -36,6 +36,11 @@ class LoginActivity : AppCompatActivity() {
     private fun directMainActivity(){
         val intent = Intent(this, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
+    }
+
+    private fun directPortalCertifyActivity(){
+        val intent = Intent(this, PortalCertifyActivity::class.java)
         startActivity(intent)
     }
 }
