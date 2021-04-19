@@ -4,12 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bluebird.pipit.R
-import kotlinx.android.synthetic.main.activity_portal_certify.*
+import kotlinx.android.synthetic.main.activity_reset_password.*
 
-class PortalCertifyActivity : AppCompatActivity() {
+class ResetPasswordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_portal_certify)
+        setContentView(R.layout.activity_reset_password)
 
         init()
     }
@@ -20,15 +20,16 @@ class PortalCertifyActivity : AppCompatActivity() {
 
     private fun setListeners(){
         backBtn.setOnClickListener { finish() }
-        findIdBtn.setOnClickListener {
-            // TODO: 4/16/21 아이디 찾기 로직 구현
+        resetPasswordBtn.setOnClickListener {
+            // TODO: 2021/04/19 비밀번호 재설정하는 로직 추가
 
-            directFindIdResultActivity()
+            directResetPasswordResultActivity()
         }
     }
 
-    private fun directFindIdResultActivity(){
-        val intent = Intent(this, FindIdResultActivity::class.java)
+
+    private fun directResetPasswordResultActivity(){
+        val intent = Intent(this, ResetPasswordResultActivity::class.java)
         startActivity(intent)
     }
 }

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bluebird.pipit.R
 import kotlinx.android.synthetic.main.activity_signup_portal.*
-import kotlinx.android.synthetic.main.activity_signup_portal.backBtn
 
 class SignupPortalActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

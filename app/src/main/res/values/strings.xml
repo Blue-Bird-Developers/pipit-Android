@@ -5,18 +5,25 @@
     <string name="introduce_pipit_text"><u>피핏을 소개합니다!</u></string>
     <!-- Login -->
     <string name="login">로그인</string>
-    <string name="id_title">아이디</string>
-    <string name="password_title">비밀번호</string>
-    <string name="lost_id_password_text">아이디/비밀번호를 잊으셨나요?</string>
-    <string name="find_id_text"><u>아이디 찾기</u></string>
-    <string name="reset_password_text"><u>비밀번호 재설정</u></string>
+    <string name="id">아이디</string>
+    <string name="password">비밀번호</string>
+    <string name="lost_id_password">아이디/비밀번호를 잊으셨나요?</string>
+    <string name="find_id_underline"><u>아이디 찾기</u></string>
+    <string name="reset_password_underline"><u>비밀번호 재설정</u></string>
     <string name="wrong_id_password">아이디 또는 비밀번호가 잘못 입력되었어요!</string>
     <!-- PortalCertify -->
     <string name="portal_certify">포탈 인증</string>
-    <string name="find_id">아이디 찾기</string>
     <!-- FindIdResult -->
+    <string name="find_id">아이디 찾기</string>
     <string name="find_id_fail_explanation">해당 계정으로 가입된 아이디가 없어요!</string>
     <string name="find_id_success_explanation">포탈 정보와 일치하는 아이디에요!</string>
+    <!-- AccountCertify -->
+    <string name="account_certify">계정 인증</string>
+    <!-- ResetPassword -->
+    <string name="new_password">새 비밀번호</string>
+    <string name="reset_password">비밀번호 재설정</string>
+    <!-- ResetPasswordResult -->
+    <string name="changed_password_explanation">비밀번호가 변경되었어요!</string>
     <!-- Signup -->
     <string name="signup">회원가입</string>
     <string name="signup_explanation">본인 학번으로 1개의 아이디만 인증 가능합니다.\n신입생은 수험번호와 생년월일로 인증할 수 있어요 :)</string>
@@ -30,7 +37,7 @@
     <string name="signup_explanation2">이제 다 왔어요!</string>
     <string name="join_password_title">비밀번호 (8~16자, 영문 숫자 조합)</string>
     <string name="join_password_helper">비밀번호는 8~16자의 영문과 숫자 조합이여야 해요!</string>
-    <string name="re_enter_password_title">비밀번호 재입력</string>
+    <string name="re_enter_password">비밀번호 재입력</string>
     <string name="subscription_complete">가입 완료</string>
     <!-- Welcome -->
     <string name="nice_to_meet_you">만나서 반가워요!</string>

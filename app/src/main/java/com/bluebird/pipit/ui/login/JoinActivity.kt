@@ -6,7 +6,6 @@ import android.os.Bundle
 import com.bluebird.pipit.R
 import com.bluebird.pipit.ui.MainActivity
 import kotlinx.android.synthetic.main.activity_join.*
-import kotlinx.android.synthetic.main.activity_join.backBtn
 
 class JoinActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

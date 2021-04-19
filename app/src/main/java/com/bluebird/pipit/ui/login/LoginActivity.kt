@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
             directPortalCertifyActivity()
         }
         resetPasswordBtn.setOnClickListener {
-            // TODO: 2021/01/20 비밀번호 재설정 버튼 구현
+            directAccountCertifyActivity()
         }
     }
 
@@ -41,6 +41,11 @@ class LoginActivity : AppCompatActivity() {
 
     private fun directPortalCertifyActivity(){
         val intent = Intent(this, PortalCertifyActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun directAccountCertifyActivity(){
+        val intent = Intent(this, AccountCertifyActivity::class.java)
         startActivity(intent)
     }
 }
