@@ -31,7 +31,7 @@ class AlertFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setViewPagerAndTab(view)
-        setBtnListener(view)
+        setListeners(view)
     }
 
     private fun setViewPagerAndTab(view: View){
@@ -45,7 +45,7 @@ class AlertFragment : Fragment() {
         }.attach()
     }
 
-    private fun setBtnListener(view: View){
+    private fun setListeners(view: View){
         alertSettingBtn = view.findViewById(R.id.alertSettingBtn)
         alertSettingBtn.setOnClickListener {
             val intent = Intent(view.context, AlertSettingActivity::class.java)

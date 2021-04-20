@@ -6,6 +6,7 @@
 
     <color name="primary100">#f5f8ff</color>
     <color name="primary600">#7d9cfa</color>
+    <color name="transparentPrimary">#0c345ce0</color>
 
     <color name="white">#FFFFFF</color>
     <color name="transparent">#00000000</color>
