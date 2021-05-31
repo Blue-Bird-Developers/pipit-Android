@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="bookmarkViewModel"
+            type="com.bluebird.pipit.ui.bookmark.BookmarkViewModel" />
+        <variable
+            name="item"
+            type="com.bluebird.pipit.dataclass.HomeDataListItem" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/main_margin"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/main_margin"
+        android:layout_marginBottom="8dp"
+        android:onClick="@{() -> homeDataViewModel.setItem(item)}"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/radius"
+        app:cardElevation="0dp"
+        app:contentPadding="@dimen/main_margin"
+        app:rippleColor="@color/transparent"
+        app:strokeColor="@color/gray200"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/categoryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{item.category}"
+                android:textColor="@color/gray600"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/bookMarkCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:button="@drawable/icon_bookmark_checkbox_24"
+                app:buttonTint="@color/checkbox_color"
+                android:checked="@{item.bookmark}"
+                android:onClick="@{(view) -> homeDataViewModel.checkBoxListener(view, item)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@{item.title}"
+                android:textColor="@color/gray900"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/categoryText" />
+
+            <TextView
+                android:id="@+id/teamText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{item.team}"
+                android:textColor="@color/gray500"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleText" />
+
+            <TextView
+                android:id="@+id/sourceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@{item.source}"
+                android:textColor="@color/gray500"
+                android:textSize="11sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/teamText"
+                app:layout_constraintStart_toEndOf="@id/teamText" />
+
+            <TextView
+                android:id="@+id/uploadTimeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{item.uploadTime}"
+                android:textColor="@color/gray400"
+                android:textSize="11sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/teamText"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
