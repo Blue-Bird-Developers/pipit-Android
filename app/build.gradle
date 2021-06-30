@@ -54,4 +54,7 @@ dependencies {
 
     //cardview
     implementation "androidx.cardview:cardview:1.0.0"
+
+    //viewPager indicator
+    implementation 'io.github.vejei.viewpagerindicator:viewpagerindicator:1.0.0-alpha.1'
 }

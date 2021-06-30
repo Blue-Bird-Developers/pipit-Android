@@ -64,6 +64,18 @@
     <string name="mypage">마이페이지</string>
     <string name="saved_bookmark_explanation">책갈피에 저장되었어요!</string>
     <string name="unsaved_bookmark_explanation">책갈피가 해제되었어요!</string>
+    <!-- Setting -->
+    <string name="setting">설정</string>
+    <string name="logout">로그아웃</string>
+    <string name="change_password">비밀번호 변경</string>
+    <string name="ask">문의하기</string>
+    <string name="open_licence">오픈소스 라이선스</string>
+    <string name="withdrawal">회원 탈퇴</string>
+    <!-- Withdrawal -->
+    <string name="really_withdrawal">정말 탈퇴하시겠어요?</string>
+    <string name="withdrawal_explanation">회원 탈퇴 시, 저장된 알림 목록이 전부 삭제되며\n다시 복구하실 수 없습니다.</string>
+    <string name="leaving">탈퇴하기</string>
+    <string name="cancel">취소하기</string>
     <!-- WebView -->
     <string name="saved">저장됨</string>
     <string name="save">저장하기</string>

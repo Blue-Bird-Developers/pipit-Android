@@ -109,6 +109,13 @@
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">center</item>
     </style>
+    <style name="grayWhiteTextButtonStyle">
+        <item name="android:background">@drawable/gray_400_button</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
 
     <!-- Login Alert TextBox Style -->
     <style name="redAlertBoxStyle">

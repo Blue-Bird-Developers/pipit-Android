@@ -19,7 +19,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="@dimen/main_margin"
         android:layout_marginBottom="8dp"
-        android:onClick="@{() -> homeDataViewModel.setItem(item)}"
+        android:onClick="@{() -> bookmarkViewModel.setItem(item)}"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="@dimen/radius"
         app:cardElevation="0dp"
@@ -51,7 +51,7 @@
                 android:button="@drawable/icon_bookmark_checkbox_24"
                 app:buttonTint="@color/checkbox_color"
                 android:checked="@{item.bookmark}"
-                android:onClick="@{(view) -> homeDataViewModel.checkBoxListener(view, item)}"
+                android:onClick="@{(view) -> bookmarkViewModel.checkBoxListener(view, item)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 

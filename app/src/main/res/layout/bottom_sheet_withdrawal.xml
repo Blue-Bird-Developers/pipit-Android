@@ -17,7 +17,7 @@
             android:id="@+id/welcomeTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/nice_to_meet_you"
+            android:text="@string/really_withdrawal"
             android:layout_marginTop="24dp"
             android:textAppearance="@style/welcomeTitleStyle"
             app:layout_constraintTop_toTopOf="parent"
@@ -28,7 +28,7 @@
             android:id="@+id/welcomeExplanation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/welcome_explanation"
+            android:text="@string/withdrawal_explanation"
             android:layout_marginTop="24dp"
             android:gravity="center_horizontal"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,28 +36,42 @@
             app:layout_constraintTop_toBottomOf="@id/welcomeTitle"/>
 
         <ImageView
-            android:id="@+id/welcomeImg"
+            android:id="@+id/withdrawalImg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/pipi_hi"
+            android:src="@drawable/pipit_embarrass"
             android:layout_marginTop="24dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/welcomeExplanation"/>
 
         <TextView
-            android:id="@+id/nextBtn"
+            android:id="@+id/cancelBtn"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:text="@string/ok"
-            style="@style/blackButtonStyle"
+            android:text="@string/cancel"
+            style="@style/grayWhiteTextButtonStyle"
             android:layout_marginTop="24dp"
             android:layout_marginStart="@dimen/main_margin"
             android:layout_marginEnd="@dimen/main_margin"
             android:layout_marginBottom="@dimen/main_margin"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/leavingBtn"
+            app:layout_constraintTop_toBottomOf="@id/withdrawalImg"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/leavingBtn"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:text="@string/leaving"
+            style="@style/blueButtonStyle"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="@dimen/main_margin"
+            android:layout_marginBottom="@dimen/main_margin"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcomeImg"
+            app:layout_constraintStart_toEndOf="@id/cancelBtn"
+            app:layout_constraintTop_toBottomOf="@id/withdrawalImg"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
