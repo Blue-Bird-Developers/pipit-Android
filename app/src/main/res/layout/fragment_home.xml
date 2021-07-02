@@ -68,6 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/main_margin"
         app:layout_constraintTop_toBottomOf="@id/bannerViewPager"
         app:tabIndicatorFullWidth="false"
         app:tabIndicatorHeight="2dp"
@@ -76,6 +77,15 @@
         app:tabSelectedTextColor="@color/colorPrimary"
         app:tabTextAppearance="@style/viewPagerTabStyle"
         app:tabTextColor="@color/gray400" />
+
+    <ImageView
+        android:id="@+id/editTabBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_edit"
+        app:layout_constraintEnd_toEndOf="@id/homeTabLayout"
+        app:layout_constraintTop_toTopOf="@id/homeTabLayout"
+        app:layout_constraintBottom_toBottomOf="@id/homeTabLayout"/>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/homeViewPager"

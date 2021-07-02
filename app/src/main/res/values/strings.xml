@@ -64,6 +64,8 @@
     <string name="mypage">마이페이지</string>
     <string name="saved_bookmark_explanation">책갈피에 저장되었어요!</string>
     <string name="unsaved_bookmark_explanation">책갈피가 해제되었어요!</string>
+    <!-- EditTab -->
+    <string name="edit_tab">탭 편집</string>
     <!-- Setting -->
     <string name="setting">설정</string>
     <string name="logout">로그아웃</string>
