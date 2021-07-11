@@ -2,12 +2,12 @@ package com.bluebird.pipit.ui.home.tab
 
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.bluebird.pipit.R
+import kotlinx.android.synthetic.main.item_edit_tab_recyclerview.view.*
 
 class TabItemTouchHelperCallback(
     val adapter: EditTabRecyclerAdapter
 ): ItemTouchHelper.Callback() {
-
-    private var isMoved = false
 
     interface OnItemMoveListener {
         fun onItemMove(fromPosition: Int, toPosition: Int)
@@ -32,18 +32,48 @@ class TabItemTouchHelperCallback(
         target: RecyclerView.ViewHolder
     ): Boolean {
         adapter.onItemMove(viewHolder.adapterPosition, target.adapterPosition)
-        isMoved = true
         return true
     }
 
     override fun onSelectedChanged(viewHolder: RecyclerView.ViewHolder?, actionState: Int) {
-        super.onSelectedChanged(viewHolder, actionState)
-        if (isMoved) {
-            isMoved = false
-            adapter.afterDragAndDrop()
+        when(actionState){
+            ItemTouchHelper.ACTION_STATE_DRAG -> {
+                if (viewHolder != null) {
+                    changeButtonImages(viewHolder, DRAG)
+                }
+            }
         }
+    }
+
+    override fun clearView(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder) {
+        changeButtonImages(viewHolder, DROP)
+        adapter.afterDragAndDrop()
     }
 
     // 좌우 스와이프
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {}
+
+    override fun isLongPressDragEnabled(): Boolean {
+        return false
+    }
+
+    private fun changeButtonImages(viewHolder: RecyclerView.ViewHolder, state: Int){
+        when(state){
+            DRAG -> {
+                viewHolder.itemView.dragBtn.setImageResource(R.drawable.ic_drag_vertical_blue)
+                viewHolder.itemView.setBackgroundResource(R.drawable.blue_line_white_button)
+                viewHolder.itemView.plusMinusBtn.setImageResource(R.drawable.ic_minus_circle_fill_blue)
+            }
+            DROP -> {
+                viewHolder.itemView.dragBtn?.setImageResource(R.drawable.ic_drag_vertical)
+                viewHolder.itemView.setBackgroundResource(R.drawable.gray_100_button)
+                viewHolder.itemView.plusMinusBtn.setImageResource(R.drawable.ic_minus_circle_fill)
+            }
+        }
+    }
+
+    companion object{
+        const val DRAG = 100
+        const val DROP = 101
+    }
 }

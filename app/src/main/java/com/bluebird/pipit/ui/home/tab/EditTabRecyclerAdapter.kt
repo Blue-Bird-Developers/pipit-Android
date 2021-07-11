@@ -6,11 +6,12 @@ import android.view.MotionEvent
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bluebird.pipit.R
+import com.bluebird.pipit.dataclass.HomeTabItem
 import kotlinx.android.synthetic.main.item_edit_tab_recyclerview.view.*
 import java.util.*
 
 class EditTabRecyclerAdapter(
-    private val dataList: MutableList<String>,
+    private var dataList: MutableList<HomeTabItem>,
     private val listener: OnListener
 ): RecyclerView.Adapter<EditTabRecyclerViewHolder>(),
     TabItemTouchHelperCallback.OnItemMoveListener{
@@ -29,19 +30,54 @@ class EditTabRecyclerAdapter(
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onBindViewHolder(holder: EditTabRecyclerViewHolder, position: Int) {
-        holder.bind(dataList[position])
+        holder.bind(dataList[holder.adapterPosition])
         holder.view.dragBtn.setOnTouchListener { _, motionEvent ->
-            if(motionEvent.action == MotionEvent.ACTION_DOWN){
-                listener.onStartDrag(holder)
-            }
+            if (!dataList[holder.adapterPosition].state)
+                return@setOnTouchListener false
+            if (motionEvent.action == MotionEvent.ACTION_DOWN)
+                    listener.onStartDrag(holder)
             return@setOnTouchListener true
         }
-        holder.view.plusMinusBtn.setOnClickListener { listener.onPlusMinusClicked(position) }
+        holder.view.plusMinusBtn.setOnClickListener {
+            //listener.onPlusMinusClicked(position)
+            changeDataListItem(holder.adapterPosition)
+        }
     }
 
     override fun onItemMove(fromPosition: Int, toPosition: Int) {
-        Collections.swap(dataList, fromPosition, toPosition)
+        if (fromPosition < toPosition) {
+            for (i in fromPosition until toPosition) {
+                Collections.swap(dataList, i, i + 1)
+            }
+        } else {
+            for (i in fromPosition downTo toPosition + 1) {
+                Collections.swap(dataList, i, i - 1)
+            }
+        }
         notifyItemMoved(fromPosition, toPosition)
+    }
+
+    private fun changeDataListItem(pos: Int){
+        if (pos != RecyclerView.NO_POSITION) {
+            val title = dataList[pos].title
+            val state = dataList[pos].state
+            if (!state){
+                for (i in dataList.indices){
+                    if (!dataList[i].state){
+                        dataList.add(i, HomeTabItem(title, true))
+                        notifyItemInserted(i)
+                        dataList.removeAt(pos+1)
+                        notifyItemRemoved(pos+1)
+                        break
+                    }
+                }
+            }else{
+                dataList.add(HomeTabItem(title, false))
+                notifyItemInserted(dataList.size-1)
+                dataList.removeAt(pos)
+                notifyItemRemoved(pos)
+            }
+        }
     }
 
     fun afterDragAndDrop() {

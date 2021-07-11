@@ -5,11 +5,13 @@ import android.os.Bundle
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.bluebird.pipit.R
+import com.bluebird.pipit.dataclass.HomeTabItem
 import kotlinx.android.synthetic.main.activity_edit_tab.*
 
 class EditTabActivity : AppCompatActivity(), EditTabRecyclerAdapter.OnListener {
 
-    private var dataList: MutableList<String> = mutableListOf()
+    private var homeList: MutableList<String> = mutableListOf()
+    private var dataList: MutableList<HomeTabItem> = mutableListOf()
 
     private lateinit var recyclerAdapter: EditTabRecyclerAdapter
     private lateinit var recyclerView: RecyclerView
@@ -44,10 +46,12 @@ class EditTabActivity : AppCompatActivity(), EditTabRecyclerAdapter.OnListener {
 
     override fun onPlusMinusClicked(position: Int) {
         // 데이터 추가, 삭제
-
     }
 
     private fun setData(){
-        dataList = intent.getStringArrayListExtra("tabDataList")!!
+        homeList = intent.getStringArrayListExtra("tabDataList")!!
+        for (data in homeList){
+            dataList.add(HomeTabItem(data, true))
+        }
     }
 }
