@@ -127,11 +127,17 @@
     </style>
 
     <!-- Welcome -->
-    <style name="welcomeTitleStyle" parent="Subtitle1">
+    <style name="welcomeTitleStyle">
         <item name="android:textColor">@color/gray900</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">-0.01</item>
     </style>
-    <style name="welcomeCaptionStyle" parent="Body3">
+    <style name="welcomeCaptionStyle">
         <item name="android:textColor">@color/gray500</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.03</item>
     </style>
 
     <!-- Bottom Navigation -->

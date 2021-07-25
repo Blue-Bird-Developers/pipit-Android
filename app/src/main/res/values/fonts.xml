@@ -5,49 +5,42 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">28sp</item>
         <item name="android:letterSpacing">-0.01</item>
-        <item name="android:lineSpacingExtra">8sp</item>
     </style>
     <style name="H2">
         <item name="android:fontFamily">@font/noto_sans_family</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">24sp</item>
         <item name="android:letterSpacing">-0.01</item>
-        <item name="android:lineSpacingExtra">8sp</item>
     </style>
     <style name="Subtitle1">
         <item name="android:fontFamily">@font/noto_sans_family</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
         <item name="android:letterSpacing">-0.01</item>
-        <item name="android:lineSpacingExtra">10sp</item>
     </style>
     <style name="Body1">
         <item name="android:fontFamily">@font/noto_sans_family</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">20sp</item>
         <item name="android:letterSpacing">-0.01</item>
-        <item name="android:lineSpacingExtra">10sp</item>
     </style>
     <style name="Subtitle2">
         <item name="android:fontFamily">@font/noto_sans_family</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
         <item name="android:letterSpacing">-0.01</item>
-        <item name="android:lineSpacingExtra">6sp</item>
     </style>
     <style name="Body2">
         <item name="android:fontFamily">@font/noto_sans_family</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">16sp</item>
         <item name="android:letterSpacing">-0.01</item>
-        <item name="android:lineSpacingExtra">8sp</item>
     </style>
     <style name="Subtitle3">
         <item name="android:fontFamily">@font/noto_sans_family</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">14sp</item>
         <item name="android:letterSpacing">-0.03</item>
-        <item name="android:lineSpacingExtra">6sp</item>
     </style>
     <style name="Body3">
         <item name="android:fontFamily">@font/noto_sans_family</item>
