@@ -76,7 +76,7 @@
         app:tabRippleColor="@color/transparent"
         app:tabSelectedTextColor="@color/colorPrimary"
         app:tabTextAppearance="@style/viewPagerTabStyle"
-        app:tabTextColor="@color/gray400" />
+        app:tabTextColor="@color/gray600" />
 
     <ImageView
         android:id="@+id/editTabBtn"

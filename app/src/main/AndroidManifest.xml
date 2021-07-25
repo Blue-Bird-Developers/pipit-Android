@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.home.tab.EditTabActivity"></activity>
+        <activity android:name=".ui.setting.changepw.CheckPasswordActivity"></activity>
+        <activity android:name=".ui.setting.changepw.ChangePasswordActivity" />
+        <activity android:name=".ui.home.tab.EditTabActivity" />
         <activity android:name=".ui.setting.SettingActivity" />
         <activity android:name=".ui.login.ResetPasswordResultActivity" />
         <activity android:name=".ui.login.ResetPasswordActivity" />

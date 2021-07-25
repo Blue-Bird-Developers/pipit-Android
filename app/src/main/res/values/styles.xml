@@ -45,17 +45,11 @@
     </style>
 
     <!-- Login -->
-    <style name="loginLabelStyle">
-        <item name="android:textSize">24sp</item>
-        <item name="android:letterSpacing">-0.01</item>
+    <style name="loginLabelStyle" parent="H2">
         <item name="android:textColor">@color/gray900</item>
-        <item name="android:textStyle">bold</item>
     </style>
-    <style name="signupNumberLabelStyle">
-        <item name="android:textSize">24sp</item>
-        <item name="android:letterSpacing">-0.01</item>
+    <style name="signupNumberLabelStyle" parent="H2">
         <item name="android:textColor">@color/colorPrimary</item>
-        <item name="android:textStyle">bold</item>
     </style>
     <style name="loginTextButtonStyle">
         <item name="android:textSize">14sp</item>
@@ -81,9 +75,7 @@
         <item name="helperTextTextColor">@color/gray600</item>
         <item name="errorTextColor">@color/red800</item>
     </style>
-    <style name="inputEditTextStyle">
-        <item name="android:textSize">20sp</item>
-        <item name="android:letterSpacing">-0.01</item>
+    <style name="inputEditTextStyle" parent="Body1">
         <item name="android:textColor">@color/gray900</item>
     </style>
 
@@ -122,10 +114,8 @@
         <item name="android:background">@drawable/red_text_box</item>
         <item name="android:gravity">center</item>
     </style>
-    <style name="alertBoxTextStyle">
-        <item name="android:textSize">14sp</item>
+    <style name="alertBoxTextStyle" parent="Subtitle3">
         <item name="android:textColor">@color/white</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
     <!-- Bottom Sheet -->
@@ -137,11 +127,11 @@
     </style>
 
     <!-- Welcome -->
-    <style name="welcomeTitleStyle">
-        <item name="android:textSize">20sp</item>
+    <style name="welcomeTitleStyle" parent="Subtitle1">
         <item name="android:textColor">@color/gray900</item>
-        <item name="android:letterSpacing">-0.01</item>
-        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="welcomeCaptionStyle" parent="Body3">
+        <item name="android:textColor">@color/gray500</item>
     </style>
 
     <!-- Bottom Navigation -->
@@ -155,54 +145,27 @@
     </style>
 
     <!-- Main(Home) -->
-    <style name="mainTitleStyle">
-        <item name="android:textSize">16sp</item>
+    <style name="mainTitleStyle" parent="Subtitle2">
         <item name="android:textColor">@color/gray900</item>
-        <item name="android:letterSpacing">-0.01</item>
-        <item name="android:textStyle">bold</item>
     </style>
-    <style name="viewPagerTabStyle">
-        <item name="android:fontFamily">@font/noto_sans_family</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:textStyle">bold</item>
+    <style name="viewPagerTabStyle" parent="Subtitle2">
     </style>
 
     <!-- Toast -->
-    <style name="toastBoxTextStyle">
-        <item name="android:textSize">14sp</item>
+    <style name="toastBoxTextStyle" parent="Subtitle3">
         <item name="android:textColor">@color/white</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
     <!-- Bookmark -->
-    <style name="bookmarkCountTextStyle">
-        <item name="android:textSize">16sp</item>
+    <style name="bookmarkCountTextStyle" parent="Subtitle2">
         <item name="android:textColor">@color/colorPrimary</item>
-        <item name="android:letterSpacing">-0.01</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
     <!-- Alert Setting -->
-    <style name="checkedAlertSettingButtonTextStyle">
-        <item name="android:textSize">14sp</item>
+    <style name="checkedAlertSettingButtonTextStyle" parent="Subtitle3">
         <item name="android:textColor">@color/colorPrimary</item>
-        <item name="android:letterSpacing">-0.03</item>
-        <item name="android:textStyle">bold</item>
     </style>
-    <style name="uncheckedAlertSettingButtonTextStyle">
-        <item name="android:textSize">14sp</item>
+    <style name="uncheckedAlertSettingButtonTextStyle" parent="Body3">
         <item name="android:textColor">@color/gray900</item>
-        <item name="android:letterSpacing">-0.03</item>
-        <item name="android:textStyle">normal</item>
-    </style>
-
-    <!-- Text Style -->
-    <style name="H1">
-        <item name="android:textSize">28dp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-    <style name="subtitle3">
-        <item name="android:textSize">14dp</item>
-        <item name="android:textStyle">bold</item>
     </style>
 </resources>

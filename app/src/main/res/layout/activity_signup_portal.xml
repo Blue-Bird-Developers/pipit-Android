@@ -39,7 +39,7 @@
             android:id="@+id/loginLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="@dimen/login_title_margin_top"
             android:text="@string/signup"
             android:textAppearance="@style/loginLabelStyle"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,7 @@
             android:layout_marginTop="12dp"
             android:text="@string/signup_explanation"
             android:textColor="@color/gray800"
-            android:textSize="14sp"
+            style="@style/Body3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/loginLabel" />
 

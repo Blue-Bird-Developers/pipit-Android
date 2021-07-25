@@ -3,6 +3,7 @@
     <dimen name="app_bar_height">48dp</dimen>
     <dimen name="main_margin">16dp</dimen>
     <dimen name="signup_text_btn_margin">4dp</dimen>
+    <dimen name="login_title_margin_top">24dp</dimen>
 
     <dimen name="radius">12dp</dimen>
 

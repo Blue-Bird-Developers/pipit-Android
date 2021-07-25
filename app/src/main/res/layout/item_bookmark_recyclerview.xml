@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:text="@{item.category}"
                 android:textColor="@color/gray600"
-                android:textSize="11sp"
+                style="@style/Caption2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,8 +62,7 @@
                 android:layout_marginTop="12dp"
                 android:text="@{item.title}"
                 android:textColor="@color/gray900"
-                android:textSize="14sp"
-                android:textStyle="bold"
+                style="@style/Subtitle3"
                 android:maxLines="2"
                 android:ellipsize="end"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -77,7 +76,7 @@
                 android:layout_marginTop="8dp"
                 android:text="@{item.team}"
                 android:textColor="@color/gray500"
-                android:textSize="11sp"
+                style="@style/Caption1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/titleText" />
 
@@ -88,7 +87,7 @@
                 android:layout_marginStart="8dp"
                 android:text="@{item.source}"
                 android:textColor="@color/gray500"
-                android:textSize="11sp"
+                style="@style/Caption1"
                 app:layout_constraintBaseline_toBaselineOf="@id/teamText"
                 app:layout_constraintStart_toEndOf="@id/teamText" />
 
@@ -98,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:text="@{item.uploadTime}"
                 android:textColor="@color/gray400"
-                android:textSize="11sp"
+                style="@style/Caption1"
                 app:layout_constraintBaseline_toBaselineOf="@id/teamText"
                 app:layout_constraintEnd_toEndOf="parent" />
 
