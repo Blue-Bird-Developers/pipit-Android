@@ -1,9 +1,11 @@
 package com.bluebird.pipit.ui.setting
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import com.bluebird.pipit.R
+import com.bluebird.pipit.ui.setting.changepw.CheckPasswordActivity
 import com.bluebird.pipit.ui.welcome.WelcomeSettingFragment
 import kotlinx.android.synthetic.main.activity_setting.*
 
@@ -50,6 +52,10 @@ class SettingActivity : AppCompatActivity() {
 
     private val recyclerViewItemListener = { pos: Int ->
         when(pos){
+            0 -> {
+                val intent = Intent(this, CheckPasswordActivity::class.java)
+                startActivity(intent)
+            }
             4 -> openWithdrawalBottomSheet()
         }
     }
