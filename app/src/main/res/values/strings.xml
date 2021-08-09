@@ -92,4 +92,5 @@
     <string name="type_using_password">현재 사용중인 비밀번호를 입력해주세요!</string>
     <string name="using_password">현재 비밀번호</string>
     <string name="lost_password">비밀번호를 잊으셨나요?</string>
+    <string name="type_new_password">새 비밀번호를 입력해주세요!</string>
 </resources>
